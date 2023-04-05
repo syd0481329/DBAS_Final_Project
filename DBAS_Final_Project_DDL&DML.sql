@@ -7,6 +7,13 @@ VALUES ('CAND#', 'First Name', 'Last Name', 'Organization');
 ROLLBACK;
 COMMIT;
 
+/*If the candidate does not have an associated organization*/
+BEGIN TRANSACTION;
+INSERT INTO CandidateInfo (candidate_id, f_name, l_name)
+VALUES ('CAND#', 'First Name', 'Last Name');
+ROLLBACK;
+COMMIT;
+
 /*To register a new voter*/
 BEGIN TRANSACTION;
 INSERT INTO VoterInfo
