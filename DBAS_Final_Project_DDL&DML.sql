@@ -73,6 +73,11 @@ WHERE voter_id = desired voter_id;
 ROLLBACK;
 COMMIT;
 
+BEGIN TRANSACTION;
+DELETE FROM VoterLogin 
+WHERE voter_id = desired voter_id;
+ROLLBACK;
+COMMIT;
 
 BEGIN TRANSACTION;
 DELETE FROM VoterInfo 
